@@ -12,7 +12,8 @@
             text-align: center;
             color: white;
             font-family: Arial, sans-serif;
-
+            margin: 0;
+            padding: 0;
         }
 
         .enter-button {
@@ -22,8 +23,12 @@
             cursor: pointer;
             border-radius: 15px;
             border: none;
+            transition: transform 0.3s ease;
         }
 
+        .enter-button:hover {
+            transform: scale(1.1);
+        }
 
         .pulsate-bck {
             -webkit-animation: pulsate-bck 0.5s ease-in-out infinite both;
@@ -63,6 +68,23 @@
                 transform: scale(1);
             }
         }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .enter-button {
+                padding: 15px 30px;
+                font-size: 20px;
+                margin-top: 30%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .enter-button {
+                padding: 12px 25px;
+                font-size: 18px;
+                margin-top: 40%;
+            }
+        }
     </style>
 </head>
 
@@ -70,7 +92,6 @@
 
     <form action="/home" method="GET">
         <button type="submit" class="enter-button pulsate-bck">Enter World</button>
-        <!-- <input type="hidden" name="stage" value="start"> -->
     </form>
 </body>
 
